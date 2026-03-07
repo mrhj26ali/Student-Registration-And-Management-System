@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="StudentReg.Data/StudentReg.Data.csproj" />
+  <Project Path="StudentReg.Domain/StudentReg.Domain.csproj" />
+  <Project Path="StudentReg.Web/StudentReg.Web.csproj" />
+</Solution>
