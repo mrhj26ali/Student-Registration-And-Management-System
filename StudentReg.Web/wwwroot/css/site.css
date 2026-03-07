@@ -1,31 +1,96 @@
-html {
-  font-size: 14px;
+html { font-size: 14px; position: relative; min-height: 100%; }
+@media (min-width: 768px) { html { font-size: 16px; } }
+
+/* Container & Card */
+.reg-container {
+    padding-top: 20px !important;
 }
 
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+.reg-card {
+    max-width: 500px;
+    margin: auto;
+    border-radius: 20px;
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.1);
+    border: none;
+    background-color: #f8f9fa;
+    padding: 2rem;
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+/* Input Group Structure */
+.input-group {
+    position: relative;
+    background: white;
+    border: 1px solid #dee2e6;
+    border-radius: 12px;
+    height: 60px; 
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    margin-bottom: 1rem;
 }
 
-html {
-  position: relative;
-  min-height: 100%;
+/* Icons and Text Labels */
+.input-content {
+    position: absolute;
+    left: 15px;
+    display: flex;
+    align-items: center;
+    pointer-events: none; 
+    transition: all 0.25s ease-in-out;
+    color: #999;
+    z-index: 2;
 }
 
-body {
-  margin-bottom: 60px;
+.input-content i {
+    margin-right: 10px;
+    font-size: 1.1rem;
 }
 
-.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
-  color: var(--bs-secondary-color);
-  text-align: end;
+/* The Input Field */
+.form-control {
+    border: none !important;
+    background: transparent !important;
+    padding-left: 48px !important; 
+    padding-top: 18px !important;  
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    font-size: 1rem;
 }
 
-.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
-  text-align: start;
+.form-control:focus {
+    box-shadow: none !important;
+}
+
+
+/* When focused or text is present, move the label up and scale it */
+.input-group:focus-within .input-content,
+.form-control:not(:placeholder-shown) ~ .input-content {
+    transform: translateY(-15px) scale(0.8); 
+    left: 10px;
+    color: #0d6efd;
+    font-weight: bold;
+}
+
+/* Focus Border Effect */
+.input-group:focus-within {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.15);
+}
+
+/* Register Button Style */
+.btn-student {
+    background-color: #0d6efd !important;
+    color: white !important;
+    border-radius: 12px;
+    padding: 12px;
+    font-weight: bold;
+    border: none !important;
+    transition: transform 0.2s, background-color 0.2s !important;
+}
+
+.btn-student:hover {
+    background-color: #0b5ed7 !important;
+    transform: translateY(-1px);
 }

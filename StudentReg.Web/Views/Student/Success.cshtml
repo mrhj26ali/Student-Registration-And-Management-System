@@ -1,0 +1,21 @@
+@model StudentReg.Domain.Entities.Student
+
+<div class="container py-5 text-center">
+    <div class="card shadow-sm mx-auto text-start" style="max-width: 600px;">
+        <div class="bg-primary text-white p-3 d-flex justify-content-between align-items-center">
+            <h4 class="m-0">Registration Successful!</h4>
+            <i class="fas fa-check-circle"></i>
+        </div>
+        <div class="card-body lh-lg">
+            <p><strong>Name:</strong> @Model.FirstName @Model.MiddleName @Model.LastName</p>
+            <p><strong>Email:</strong> @Model.Email</p>
+            <p><strong>Enrollment Status:</strong> @(Model.EnrollNewsletter ? "Enrolled" : "Not Enrolled")</p>
+            
+            <hr />
+            <div class="d-flex gap-2">
+                <a asp-action="Index" class="btn btn-outline-primary w-100">View All Students</a>
+                <a asp-action="Register" class="btn btn-primary w-100">Add Another</a>
+            </div>
+        </div>
+    </div>
+</div>

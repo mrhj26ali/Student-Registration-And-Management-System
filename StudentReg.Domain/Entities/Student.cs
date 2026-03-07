@@ -15,6 +15,9 @@ public class Student
     [Required]
     public DateTime DateOfBirth { get; set; }
 
+    public bool EnrollNewsletter { get; set; }
+
+    public string? Preference { get; set; } 
     // Relationships
     public ICollection<Enrollment> Enrollments { get; set; } = new List<Enrollment>();
 }

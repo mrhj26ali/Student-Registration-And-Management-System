@@ -1,0 +1,73 @@
+@model StudentReg.Domain.Entities.Student
+
+<div class="container">
+    <div class="card reg-card p-4">
+        <div class="text-center mb-3">
+            <i class="fas fa-user-graduate fa-2x text-primary"></i>
+            <h2 class="mt-1 text-primary">Student Registration</h2>
+        </div>
+
+        <form asp-action="Register" method="post">
+            @* Exact structure for floating label animation *@
+            <div class="input-group mb-3">
+                <input asp-for="FirstName" class="form-control" placeholder=" " required />
+                <div class="input-content">
+                    <i class="fas fa-user"></i>
+                    <span>First Name</span>
+                </div>
+            </div>
+
+            <div class="input-group mb-3">
+                <input asp-for="MiddleName" class="form-control" placeholder=" " />
+                <div class="input-content">
+                    <i class="fas fa-user"></i>
+                    <span>Middle Name</span>
+                </div>
+            </div>
+
+            <div class="input-group mb-3">
+                <input asp-for="LastName" class="form-control" placeholder=" " required />
+                <div class="input-content">
+                    <i class="fas fa-user"></i>
+                    <span>Last Name</span>
+                </div>
+            </div>
+
+            <div class="input-group mb-3">
+                <input asp-for="Email" type="email" class="form-control" placeholder=" " required />
+                <div class="input-content">
+                    <i class="fas fa-envelope"></i>
+                    <span>Email Address</span>
+                </div>
+            </div>
+
+            @* Newsletter Section from your design *@
+            <div class="form-check mb-2">
+                <input asp-for="EnrollNewsletter" class="form-check-input" id="newsletterCheck" onclick="togglePreferences()">
+                <label class="form-check-label" for="newsletterCheck">
+                    <i class="fas fa-newspaper ms-2"></i> Enroll in Newsletter
+                </label>
+            </div>
+
+            <div id="prefSection" style="display:none;" class="mb-2 p-2 bg-white rounded border">
+                <label class="small"><i class="fas fa-star me-2"></i> Preferences</label>
+                <select asp-for="Preference" class="form-select form-select-sm mt-1">
+                    <option value="Daily">Daily</option>
+                    <option value="Weekly">Weekly</option>
+                    <option value="Monthly">Monthly</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-student w-100 mt-2">
+                <i class="fas fa-paper-plane me-2"></i> Register Now
+            </button>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        @* Ensures preference visibility is set correctly on load [cite: 31, 32] *@
+        document.addEventListener("DOMContentLoaded", togglePreferences);
+    </script>
+}
