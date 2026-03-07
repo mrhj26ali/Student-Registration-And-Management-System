@@ -1,4 +1,19 @@
-﻿// Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿// This function handles the visibility of the newsletter preference dropdown
+function togglePreferences() {
+    var check = document.getElementById("newsletterCheck");
+    var pref = document.getElementById("prefSection");
+    
+    if (check && pref) {
+        pref.style.display = check.checked ? "block" : "none";
+    }
+}
 
-// Write your JavaScript code.
+// Ensure the function runs once the page is fully loaded to set initial state
+document.addEventListener("DOMContentLoaded", function() {
+    console.log("Student Management System UI Loaded");
+    
+    // If the newsletter checkbox exists, initialize its state
+    if (document.getElementById("newsletterCheck")) {
+        togglePreferences();
+    }
+});
