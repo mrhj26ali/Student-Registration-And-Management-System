@@ -9,6 +9,6 @@ public class Course
     public string Title { get; set; } = string.Empty;
     public int Credits { get; set; }
 
-    // Relationships
+    
     public ICollection<Enrollment> Enrollments { get; set; } = new List<Enrollment>();
 }

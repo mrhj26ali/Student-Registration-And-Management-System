@@ -31,12 +31,12 @@ public class StudentController : Controller
         if (ModelState.IsValid)
         {
             await _studentService.RegisterStudentAsync(student);
-            return View("Success", student); // Redirects to your requested Success style
+            return View("Success", student); 
         }
         return View(student);
     }
 
-    // New: View Student Details
+    
     public async Task<IActionResult> Details(int id)
     {
         var student = await _studentService.GetStudentByIdAsync(id);
@@ -44,7 +44,7 @@ public class StudentController : Controller
         return View(student);
     }
 
-    // New: Delete Student
+    
     [HttpPost]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Delete(int id)

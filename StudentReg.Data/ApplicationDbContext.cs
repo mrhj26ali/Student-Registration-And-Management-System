@@ -1,6 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using StudentReg.Domain.Entities; // Pointing to your Domain layer
-
+using StudentReg.Domain.Entities; 
 namespace StudentReg.Data;
 
 public class ApplicationDbContext : DbContext
@@ -10,7 +9,7 @@ public class ApplicationDbContext : DbContext
     {
     }
 
-    // DbSets for your tables
+    
     public DbSet<Student> Students { get; set; }
     public DbSet<Course> Courses { get; set; }
     public DbSet<Enrollment> Enrollments { get; set; }
@@ -19,15 +18,13 @@ public class ApplicationDbContext : DbContext
     {
         base.OnModelCreating(modelBuilder);
 
-        // Explicitly defining the Many-to-Many relationship through Enrollment
-        
+       
         // 1. Enrollment -> Student
         modelBuilder.Entity<Enrollment>()
             .HasOne(e => e.Student)
             .WithMany(s => s.Enrollments)
             .HasForeignKey(e => e.StudentId)
-            .OnDelete(DeleteBehavior.Cascade); // If a student is deleted, their enrollments are too
-
+            .OnDelete(DeleteBehavior.Cascade); 
         // 2. Enrollment -> Course
         modelBuilder.Entity<Enrollment>()
             .HasOne(e => e.Course)
