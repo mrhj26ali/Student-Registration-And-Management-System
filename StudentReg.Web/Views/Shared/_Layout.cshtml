@@ -9,25 +9,32 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Student" asp-action="Index">
-                    <i class="fas fa-university me-2 text-primary"></i>Student Portal
-                </a>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-controller="Student" asp-action="Index">Students</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-controller="Student" asp-action="Register">Register</a>
-                        </li>
-                    </ul>
-                </div>
+   <header>
+    <nav class="navbar navbar-expand-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+            
+                <i class="fas fa-university me-2 text-primary"></i>
+            
+
+            <div class="navbar-collapse collapse d-sm-inline-flex">
+                <ul class="navbar-nav flex-grow-1">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-controller="Student" asp-action="Index">Students</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-controller="Student" asp-action="Register">Register</a>
+                    </li>
+                </ul>
             </div>
-        </nav>
-    </header>
+
+            <div class="ms-auto">
+                <a asp-controller="FlowerGame" asp-action="Display">
+                    <i class="fas fa-fan fa-lg fa-spin-hover"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+</header>
 
     <div class="container">
         <main role="main" class="pb-3">
